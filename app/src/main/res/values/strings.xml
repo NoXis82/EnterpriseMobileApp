@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EnterpriseMobileApp</string>
+    <string name="phone_input">Укажите номер толефона</string>
+    <string name="callBtn">Звоним</string>
+    <string name="sms_input">Введите текст сообщения</string>
+    <string name="sendBtn">Отправляем</string>
+</resources>
