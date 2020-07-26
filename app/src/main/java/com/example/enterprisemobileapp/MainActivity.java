@@ -107,23 +107,18 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResult) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
-                if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
+        if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
+            switch (requestCode) {
+                case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
                     checkCallPermission();
-                } else {
-                    finish();
+                }
+                case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                    checkSendPermission();
                 }
             }
-            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-                if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
-                   checkSendPermission();
-                } else {
-                    finish();
-                }
-            }
+        } else {
+            finish();
         }
     }
-
 
 }
